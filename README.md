@@ -15,19 +15,27 @@ grunt build
 
 ##目录结构
 ```js
-index.php // 首页
-map.php // 婚宴酒店地图
-invitation.php // 喜帖
-sign.php // 现场签到
-blessing.php // 祝福墙
-
-/* --------------- */
-wechat-push.php // 微信推送消息
-wechat.php // 微信接收消息
-
-/* --------------- */
-album/ // 首页相册的大图
-wechat-img/ // 微信消息推送使用的图片
-wechat-log/ // 微信消息日志
-wechat-photo/ //微信接收到的图片
+src
+    ├─album             // 首页相册的大图
+    │  ├─name1
+    │  │  ├─1.jpg
+    │  │  ├─2.jpg
+    │  │  └─N.jpg
+    │  ├─name2
+    │  └─nameN
+    │
+    ├─public
+    │  └─invitees.php   // 被邀请人名单
+    │
+    ├─wechat-img        // 微信消息推送使用的图片
+    ├─wechat-log        // 微信消息日志
+    ├─wechat-photo      //微信接收到的图片
+    │
+    ├─blessing.php      // 祝福墙
+    ├─index.php         // 首页
+    ├─invitation.php    // 喜帖
+    ├─map.php           // 婚宴酒店地图
+    ├─sign.php          // 现场签到
+    ├─wechat-push.php   // 微信推送消息
+    └─wechat.php        // 微信接收消息
 ```
