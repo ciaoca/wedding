@@ -3,6 +3,16 @@ Wu &amp; Xiong's Wedding 基于微信公众号开发的微婚礼
 
 没有使用任何数据库，所有涉及到的数据都使用文件保存，或在文件中手动设置。
 
+##微信公众号：fensalir
+
+![fensalir](http://wedding.ciaoca.com/img/qrcode_8cm.png)
+
+##体验
+使用移动设备访问：http://wedding.ciaoca.com/
+
+![首页](http://qr.liantu.com/api.php?text=http://wedding.ciaoca.com/&w=258)
+
+
 ##初始化
 ```
 npm install
