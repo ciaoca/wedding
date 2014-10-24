@@ -14,7 +14,7 @@ grunt build
 ```
 
 ##目录结构
-```js
+```
 src
     ├─album             // 首页相册的大图
     │  ├─name1
