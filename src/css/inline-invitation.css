@@ -1,0 +1,43 @@
+html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p,table,th,td,fieldset,form,input,textarea,select,hr,blockquote,pre{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:bold;line-height:2;}
+img{border:none;vertical-align:top;}
+html{background:#c1fbff;font-size:10px;}
+body{color:#333;font-family:Arial,'\5fae\8f6f\96c5\9ed1',sans-serif;line-height:1.6;}
+
+a,
+a:hover{color:#41c1ca;text-decoration:none;}
+
+.wrap{position:relative;max-width:640px;margin:0 auto;}
+.box{height:0;padding-top:276%;background:url(../img/invitation.jpg) no-repeat center top;background-size:cover;}
+.invitee{position:absolute;top:14%;left:0;width:100%;color:#014289;font-size:1.8rem;font-weight:bold;line-height:30px;text-align:center;}
+.info{display:none;position:absolute;top:41%;left:0;width:100%;color:#014289;font-size:1.4rem;font-weight:bold;line-height:20px;text-align:center;}
+.qrcode{position:absolute;bottom:2%;left:0;width:100%;color:#380d05;font-size:1.2rem;font-weight:bold;text-align:center;line-height:20px;}
+.qrcode .title{font-size:1.4rem;}
+.qrcode .pic{display:block;width:130px;height:130px;margin:3px auto;background:url(../img/qrcode_8cm.png) no-repeat;background-size:contain;}
+.qrcode .tip{color:#fff;font-weight:normal;}
+
+
+/**
+ * Responsive
+ * ------------------------------ */
+@media screen and (min-width:480px){
+.invitee{font-size:2.4rem;}
+.info{font-size:1.8rem;line-height:30px;}
+
+.qrcode{font-size:1.6rem;line-height:30px;}
+.qrcode .title{font-size:2rem;}
+.qrcode .pic{width:200px;height:200px;}
+}
+
+@media screen and (min-width:600px){
+.invitee{font-size:3rem;line-height:40px;}
+.info{font-size:2.4rem;line-height:36px;}
+}
+
+@media screen and (min-width:641px){
+html{background:#191e23 url(../img/bg/noisy_net.png) repeat;}
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) and (min-width:641px){
+html{background-image:url(../img/bg/noisy_net@2x.png);}
+}

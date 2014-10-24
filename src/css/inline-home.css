@@ -1,0 +1,224 @@
+html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p,table,th,td,fieldset,form,input,textarea,select,hr,blockquote,pre{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:bold;line-height:2;}
+img{border:none;vertical-align:top;}
+html{background:#191e23 url(../img/bg/noisy_net.png) repeat;font-size:10px;}
+body{color:#333;font-family:Arial,'\5fae\8f6f\96c5\9ed1',sans-serif;line-height:1.6;}
+
+/**
+ * 默认布局
+ * ------------------------------ */
+.wrap{position:relative;min-width:320px;max-width:640px;margin:0 auto;background:#84d8d1;}
+.wrap:after{content:'';visibility:hidden;display:block;clear:both;height:0;font-size:0;}
+
+
+/**
+ * loading
+ * ------------------------------ */
+.loader_lock{overflow:hidden;position:relative;width:100%;height:100%;background:#84d8d1;}
+.loader_lock:after{content:'Tip: 建议在 WIFI 环境下浏览';position:absolute;bottom:10px;left:10px;color:#eaf8f6;}
+
+/* 非 WIFI 环境访问 */
+.loader_wifi{overflow:hidden;position:absolute;top:55%;left:50%;padding:10px;border-radius:10px;background:#41c1ca;color:#eaf8f6;text-align:center;
+-webkit-transform:translateX(-50%);
+transform:translateX(-50%);
+}
+.loader_wifi:before{content:'当前正在使用 2G/3G 网络';display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.loader_wifi:after{content:'点击继续浏览';display:block;}
+
+.loader{overflow:hidden;position:absolute;bottom:50%;left:50%;width:120px;height:100px;opacity:1;
+-webkit-transform:translateX(-50%);
+transform:translateX(-50%);
+}
+.loader:before{content:'';display:block;position:relative;width:120px;height:100px;background:url(../img/load.png) no-repeat;background-size:cover;z-index:2;}
+.loader:after{content:attr(title);position:absolute;bottom:50%;left:0;width:100%;color:#41c1ca;font:16px/1 Arial;text-align:center;text-shadow:0 0 6px #fff;z-index:3;}
+.loader i{position:absolute;bottom:0;left:0;width:100%;height:0%;background:rgba(255,255,255,0.8);z-index:1;}
+
+.loader.end{opacity:1;
+-webkit-animation:loaderEnd 0.5s 0.6s ease-out both;
+}
+.loader.end:after{content:'100%';}
+.loader.end i{height:100% !important;
+-webkit-transition:height 0.5s ease-in;
+transition:height 0.5s ease-in;
+}
+@-webkit-keyframes loaderEnd{
+	0%{opacity:1;}
+	100%{opacity:0;}
+}
+
+/* PC 访问显示二维码 */
+.loader_qrcode{overflow:hidden;position:absolute;top:50%;left:50%;width:258px;height:288px;margin:-144px 0 0 -129px;padding:10px;border-radius:10px;background:#41c1ca;color:#eaf8f6;text-align:center;}
+.loader_qrcode:before{content:'';display:block;width:258px;height:258px;border-radius:10px;background:url(../img/qrcode_8cm.png) no-repeat;}
+.loader_qrcode:after{content:'请使用微信扫一扫功能，扫描上面的二维码。';display:block;margin-top:12px;}
+
+/* 微信分享提示 */
+.share_tip{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:99;}
+.share_tip:before{content:'';position:absolute;top:10px;right:10px;width:32px;height:51px;background:url(../img/share_arrow.png) no-repeat;background-size:contain;}
+.share_tip:after{content:'请点击操作菜单，即可发送给朋友或者分享到朋友圈。';display:block;padding:70px 10% 0;color:#fff;font-size:2.6rem;font-style:italic;}
+
+/**
+ * loading
+ * ------------------------------ */
+.wed_main .inbox{position:relative;opacity:0;}
+.wed_main.coming .inbox{opacity:1;
+-webkit-transition:opacity 0.8s ease-in;
+transition:opacity 0.8s ease-in;
+}
+.wed_main.coming .wed_banner{-webkit-animation:BannerShow 0.6s 1s ease-in-out both;}
+.wed_main.coming .wed_banner .logo{-webkit-animation:BannerLogoShow 1.4s 1.6s ease-out both;}
+.wed_main.coming .wed_banner .date{-webkit-animation:BannerDateShow 1.4s 1.6s ease-out both;}
+.wed_main.coming .wed_banner .name{-webkit-animation:BannerNameShow 1s 3s ease-in both;}
+.wed_main.coming .wed_timeline .tail{-webkit-animation:TimelineTailShow 2s 4s ease-in both;}
+.wed_main.coming .wed_timeline .wedding{-webkit-animation:TimelineItemShow 1s 4.2s ease-in both;}
+.wed_main.coming .wed_timeline .happiness{-webkit-animation:TimelineItemShow 0.5s 4.4s ease-in both;}
+.wed_main.coming .wed_timeline .happy{-webkit-animation:TimelineItemShow 0.5s 4.7s ease-in both;}
+
+@-webkit-keyframes BannerShow{
+	0%{padding-top:0;}
+	100%{padding-top:45%;}
+}
+@-webkit-keyframes BannerLogoShow{
+	0%{opacity:0;-webkit-transform:rotateY(-270deg);}
+	60%{opacity:1;-webkit-transform:rotateY(0);}
+	100%{opacity:1;-webkit-transform:rotateY(0);}
+}
+@-webkit-keyframes BannerDateShow{
+	0%{right:30%;opacity:0;}
+	60%{right:30%;opacity:0;}
+	100%{right:3%;opacity:1;}
+}
+@-webkit-keyframes BannerNameShow{
+	0%{opacity:0;-webkit-transform:translateY(-10px);}
+	100%{opacity:1;-webkit-transform:translateY(0);}
+}
+@-webkit-keyframes TimelineTailShow{
+	0%{height:0;}
+	100%{height:100%;}
+}
+@-webkit-keyframes TimelineItemShow{
+	0%{opacity:0;}
+	100%{opacity:1;}
+}
+
+
+/**
+ * Banner
+ * ------------------------------ */
+.wed_banner{position:relative;height:0;padding-top:0;background:#ecf9f8;z-index:1;}
+.wed_banner .logo{position:absolute;top:14%;left:4%;width:120px;height:84px;background:url(../img/home/banner_logo.png) no-repeat;background-size:contain;opacity:0;}
+.wed_banner .date{position:absolute;top:19%;right:3%;width:175px;height:70px;background:url(../img/home/banner_date.png) no-repeat;background-size:contain;opacity:0;}
+.wed_banner .name{position:absolute;top:71%;left:50%;width:180px;height:36px;margin-left:-90px;background:url(../img/home/banner_name.png) no-repeat;background-size:contain;opacity:0;}
+
+
+/**
+ * Timeline
+ * ------------------------------ */
+.wed_timeline{position:relative;height:0;padding-top:425%;background:url(../img/home/bg.png) no-repeat center top;background-size:cover;font-size:1.2rem;}
+.wed_timeline h2,
+.wed_timeline h3{color:#0aa0ab;font:bold 1.8rem/1.4 'Hiragino Kaku Gothic ProN','\5fae\8f6f\96c5\9ed1',sans-serif;text-shadow:1px 0 2px #ecf9f8,0 1px 2px #ecf9f8;}
+.wed_timeline p{color:#01909a;line-height:1.5;text-shadow:1px 0 0 #d0f5f2,0 1px 0 #d0f5f2;white-space:nowrap;text-overflow:ellipsis;}
+.wed_timeline .tail{position:absolute;top:0;left:50%;width:24px;height:0;margin-left:-12px;background:#ecf9f8;}
+.wed_timeline .tail:before{content:'';position:absolute;top:0;left:50%;width:18px;height:100%;margin-left:-10px;border-left:1px dashed #84d8d1;border-right:1px dashed #84d8d1;}
+.wed_timeline .tail:after{content:'';position:absolute;bottom:0;left:50%;width:0;height:0;margin-left:-12px;border:12px solid transparent;border-bottom-color:#84d8d1;}
+.wed_timeline .item{position:absolute;width:43%;}
+.wed_timeline .photo{display:block;width:100px;height:75px;margin-left:2px;margin-bottom:5px;padding:7px;background:url(../img/home/photo_frame.png) no-repeat center top;background-size:cover;box-shadow:1px 1px 1px rgba(0,0,0,0.3);}
+.wed_timeline .photo:after{content:'';display:block;width:100%;height:100%; background-repeat:no-repeat;background-size:cover; box-shadow:inset 1px 1px 1px rgba(0,0,0,0.3);}
+.wed_timeline .info{overflow:hidden;}
+
+.wed_timeline .wedding{top:2%;left:2%;opacity:0;}
+.wed_timeline .wedding .photo:after{background-image:url(../img/home/pic_7.jpg);}
+.wed_timeline .happiness{top:10%;left:56%;opacity:0;}
+.wed_timeline .happiness .photo:after{background-image:url(../img/home/pic_6.jpg);}
+.wed_timeline .happy{top:19%;left:2%;opacity:0;}
+.wed_timeline .happy:before{content:'';position:absolute;top:-30px;right:0;width:100px;height:28px;background:url(../img/home/click_tip.png) no-repeat; background-size:contain;}
+.wed_timeline .happy .photo:after{background-image:url(../img/home/pic_5.jpg);}
+.wed_timeline .hangzhou{top:41%;left:56%;}
+.wed_timeline .hangzhou .photo:after{background-image:url(../img/home/pic_4.jpg);}
+.wed_timeline .expo{top:47%;left:2%;}
+.wed_timeline .expo .photo:after{background-image:url(../img/home/pic_3.jpg);}
+.wed_timeline .graduate{top:61%;left:56%;}
+.wed_timeline .graduate .photo:after{background-image:url(../img/home/pic_2.jpg);}
+.wed_timeline .express{top:72%;left:2%;}
+.wed_timeline .express .photo:after{background-image:url(../img/home/pic_1.jpg);}
+
+.wed_timeline .wedding h2,
+.wed_timeline .wedding h3{font-style:italic;}
+.wed_timeline .graduate h2,
+.wed_timeline .express h2{font-size:1.6rem;}
+
+.wed_timeline .follow{position:absolute;bottom:10px;right:10px;width:80px;padding:4px 6px 6px 6px;border-radius:5px;background:rgba(255,255,255,0.6);background-size:contain;text-align:center;}
+.wed_timeline .qrcode{display:block;width:80px;height:80px;background:url(../img/qrcode_8cm.png) no-repeat;background-size:contain;}
+.wed_timeline .share{position:absolute;bottom:10px;left:10px;width:120px;height:30px;background:url(../img/home/pyq.png) no-repeat;background-size:contain;}
+
+
+
+
+/**
+ * Responsive
+ * ------------------------------ */
+@media screen and (min-width:480px){
+.share_tip:after{text-align:center;}
+
+.wed_banner .logo{width:180px;height:126px;}
+.wed_banner .date{width:262px;height:105px;}
+.wed_banner .name{width:270px;height:54px;margin-left:-135px;}
+
+.wed_timeline{font-size:1.6rem;}
+.wed_timeline .tail{width:36px;margin-left:-18px;}
+.wed_timeline .tail:before{width:28px;margin-left:-15px;}
+.wed_timeline .tail:after{margin-left:-18px;border-width:18px;}
+.wed_timeline h2,
+.wed_timeline h3,
+.wed_timeline .graduate h2,
+.wed_timeline .express h2{font-size:2.4rem;}
+.wed_timeline p{text-shadow:1px 0 2px #d0f5f2,0 1px 2px #d0f5f2;}
+.wed_timeline .item{width:40%;}
+.wed_timeline .photo{width:150px;height:112px;padding:10px;}
+
+.wed_timeline .wedding,
+.wed_timeline .happy,
+.wed_timeline .expo,
+.wed_timeline .express{left:4%;}
+.wed_timeline .happiness,
+.wed_timeline .hangzhou,
+.wed_timeline .graduate{left:58%;}
+
+.wed_timeline .follow{right:20px;width:120px;}
+.wed_timeline .qrcode{width:120px;height:120px;}
+.wed_timeline .share{left:20px;width:180px;height:45px;}
+}
+
+@media screen and (min-width:568px){
+.wed_banner .logo{width:213px;height:149px;}
+.wed_banner .date{width:310px;height:124px;}
+.wed_banner .name{width:320px;height:64px;margin-left:-160px;}
+}
+
+@media screen and (min-width:640px){
+.wed_banner .logo{width:240px;height:168px;}
+.wed_banner .date{width:350px;height:140px;}
+.wed_banner .name{width:360px;height:72px;margin-left:-180px;}
+
+.wed_timeline{font-size:1.8rem;}
+.wed_timeline .tail{width:40px;margin-left:-20px;}
+.wed_timeline .tail:before{width:32px;margin-left:-17px;}
+.wed_timeline .tail:after{margin-left:-20px;border-width:20px;}
+.wed_timeline h2,
+.wed_timeline h3,
+.wed_timeline .graduate h2,
+.wed_timeline .express h2{margin-bottom:5px;font-size:2.4rem;}
+.wed_timeline .wedding h2{margin-bottom:0;}
+.wed_timeline p{text-shadow:1px 0 2px #d0f5f2,0 1px 2px #d0f5f2;}
+.wed_timeline .photo{width:200px;height:150px;padding:15px;}
+
+.wed_timeline .follow{padding:10px;}
+}
+
+
+/**
+ * Retina
+ * ------------------------------ */
+@media only screen and (-webkit-min-device-pixel-ratio:1.5){
+html{background-image:url(../img/bg/noisy_net@2x.png);}
+.loader:before{background-image:url(../img/load@2x.png);}
+}

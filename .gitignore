@@ -1,0 +1,15 @@
+# Image PSD file
+*.psd
+
+# Private file
+*.ciaoca.*
+data/
+src/album/*/*.jpg
+src/wechat-img/*.jpg
+src/wechat-img/*.png
+
+# Other files and folders
+.tmp/
+dist/
+node_modules/
+_*/
