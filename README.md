@@ -29,7 +29,7 @@ src
     │
     ├─wechat-img        // 微信消息推送使用的图片
     ├─wechat-log        // 微信消息日志
-    ├─wechat-photo      //微信接收到的图片
+    ├─wechat-photo      // 微信接收到的图片
     │
     ├─blessing.php      // 祝福墙
     ├─index.php         // 首页
