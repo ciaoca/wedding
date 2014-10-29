@@ -245,6 +245,13 @@
 		});
 	};
 
-	app.init();
+
+	setTimeout(function(){
+		// 微信中错位修正
+		document.body.scrollTop = 1;
+		document.body.scrollTop = 0;
+
+		app.init();
+	}, 100);
 
 })();
